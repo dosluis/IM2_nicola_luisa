@@ -1,11 +1,150 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
 
 body {
-    background-color: pink;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #020104;
+  font-family:Arial, Helvetica, sans-serif;
+  color: white;
+  font-weight: 200;
+  font-style: italic;
 }
 
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #020104;
+}
+
+.glow-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.dark-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 2;
+}
+
+header {
+  position: absolute;
+  top: 40px;
+  left: 35px;
+  z-index: 5;
+}
+
+.logo {
+  color: #a100ff;
+  font-size: 38px;
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+.content {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 5;
+}
+
+.eyebrow {
+  font-family: "Roboto Mono", monospace;
+  color: #a100ff;
+  font-size: clamp(22px, 2.5vw, 42px);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-family: "Roboto Mono", monospace;
+
+  font-size: clamp(50px, 6vw, 110px);
+
+  font-style: italic;
+  font-weight: 400;
+
+  letter-spacing: 18px;
+  white-space: nowrap;
+}
+
+
+
+h1 span {
+  margin: 0 20px;
+}
+
+/*back button*/
+.back-btn {
+  position: absolute;
+
+  bottom: 40px;
+  left: 35px;
+
+  z-index: 5;
+
+  font-family: "Roboto Mono", monospace;
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 400;
+
+  color: #a100ff;
+
+  text-decoration: none;
+
+  opacity: 0.75;
+
+  transition: 0.3s ease;
+}
+
+.back-btn:hover {
+  opacity: 1;
+  transform: translateX(-4px);
+}
+
+button {
+  font-family: "Roboto Mono", monospace;
+  font-style: normal;
+
+  margin-top: 80px;
+
+  padding: 0 45px;
+  height: 80px;
+
+  border-radius: 50px;
+  border: 1px solid rgba(255,255,255,0.15);
+
+  background: linear-gradient(135deg, #55106e, #2a003d);
+
+  color: #c020ff;
+
+  font-size: 26px;
+  
+
+  cursor: pointer;
+
+  box-shadow: 0 0 35px rgba(160, 0, 255, 0.25);
+
+  transition: 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 55px rgba(180, 0, 255, 0.55);
+}

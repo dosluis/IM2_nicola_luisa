@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Another - Card</title>
+
+    <link rel="stylesheet" href="css/card.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <main class="card-page">
+      <video class="card-background-video" autoplay muted loop playsinline>
+        <source src="assets/gender_animation.mp4" type="video/mp4" />
+      </video>
+
+      <div class="dark-overlay"></div>
+
+      <!--back button-->
+      <a href="gender.html" class="back-btn">back</a>
+
+      <h1 class="card-title">new identity data:</h1>
+
+      <section class="identity-card">
+        <div class="data-grid">
+          <div class="data-block">
+            <p class="label">name:</p>
+            <p class="value" id="name"></p>
+          </div>
+
+          <!--BIRTHDAY-->
+          <div class="data-block">
+            <p class="label">date of birth:</p>
+            <p class="value" id="birthdate"></p>
+          </div>
+          <!--ALTER-->
+          <div class="data-block">
+            <p class="label">age:</p>
+            <p class="value" id="age"></p>
+          </div>
+
+          <!--STRASSE noch tbd..-->
+          <div class="data-block">
+            <p class="label">address:</p>
+            <p class="value" id="address"></p>
+          </div>
+
+          <!--Stadt-->
+          <div class="data-block">
+            <p class="label">country:</p>
+            <p class="value" id="country"></p>
+          </div>
+
+          <!--Geschlecht-->
+          <div class="data-block">
+            <p class="label">sex:</p>
+            <p class="value" id="sex"></p>
+          </div>
+
+          <!--TELEFONNUMMER-->
+          <div class="data-block">
+            <p class="label">phone:</p>
+            <p class="value" id="phone"></p>
+          </div>
+          <!--NAtionalität-->
+          <div class="data-block">
+            <p class="label">nationality:</p>
+            <p class="value" id="nationality">fr</p>
+          </div>
+        </div>
+
+        <!-- Lottie Platzhalter unten rechts -->
+        <div class="fingerprint-placeholder" id="fingerprintPlaceholder">
+          <!-- Hier später dein Lottie einfügen -->
+          <!--
+          <lottie-player
+            src="assets/fingerprint.json"
+            background="transparent"
+            speed="1"
+            loop
+            autoplay>
+          </lottie-player>
+          -->
+
+          <div class="fake-fingerprint">⌾</div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/script.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Another</title>
+
+    <link rel="stylesheet" href="css/gender.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <main class="hero">
+      <!-- Hintergrund MP4 -->
+      <video class="background-video" autoplay muted loop playsinline>
+        <source src="assets/gender_animation.mp4" type="video/mp4" />
+      </video>
+
+      <div class="dark-overlay"></div>
+
+      <header>
+        <div class="logo">another</div>
+      </header>
+      <a href="home.html" class="back-btn">back</a>
+
+      <section class="gender-content">
+        <h1>
+          choose your <br />
+          gender
+        </h1>
+
+        <div class="button-row">
+          <button class="gender-btn" data-gender="male">male</button>
+          <button class="gender-btn" data-gender="female">female</button>
+          <button class="gender-btn" data-gender="others">others</button>
+        </div>
+      </section>
+
+      <!--figur-->
+      <div id="figureWrapper" class="figure-wrapper">
+        <img
+          class="figure-gif"
+          src="assets/2gender_kugel.gif"
+          alt="animation"
+        />
+      </div>
+      <p id="transitionText" class="transition-text">
+        data information loading...
+      </p>
+
+      <!--content verschwindet und process completed kommt-->
+      <div id="resultContent" class="result-content">
+        <h2>Process completed.</h2>
+
+        <button id="resultsBtn" class="results-btn">view results</button>
+      </div>
+
+      <!-- Figur Gif Kugel  -->
+    </main>
+
+    <script src="js/script.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,396 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #020104;
+  font-family:Arial, Helvetica, sans-serif;
+  color: white;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #020104;
+}
+
+/* Hintergrund */
+
+.background-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.dark-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 2;
+}
+
+/* Logo */
+
+header {
+  position: absolute;
+  top: 40px;
+  left: 35px;
+  z-index: 5;
+}
+
+.logo {
+  color: #a100ff;
+  font-size: 38px;
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+/* Linker Content */
+
+.gender-content {
+  position: absolute;
+  top: 41%;
+  left: 27%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 5;
+}
+
+.gender-content h1 {
+  font-family: "Roboto Mono", monospace;
+
+  font-size: clamp(40px, 4.5vw, 80px);
+
+  font-style: italic;
+  font-weight: 400;
+
+  letter-spacing: 18px;
+  white-space: nowrap;
+}
+
+
+/* Buttons */
+
+.button-row {
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  margin-top: 55px;
+}
+
+.gender-btn {
+  font-family: "Roboto Mono", monospace;
+  font-style: normal;
+  font-weight: 500;
+
+  min-width: 150px;
+  height: 70px;
+  padding: 0 35px;
+
+  border-radius: 999px;
+  border: 1px solid rgba(180, 70, 255, 0.25);
+
+  background: linear-gradient(135deg, #1b0028, #4d075f);
+
+  color: #b020ff;
+  font-size: 22px;
+
+  cursor: pointer;
+
+  box-shadow: 0 0 35px rgba(160, 0, 255, 0.22);
+  transition: 0.3s ease;
+}
+
+.gender-btn:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 55px rgba(180, 0, 255, 0.5);
+}
+
+.gender-btn.active {
+  background: linear-gradient(135deg, #6f1188, #320044);
+  box-shadow: 0 0 65px rgba(180, 0, 255, 0.65);
+}
+
+/*back button*/
+.back-btn {
+  position: absolute;
+
+  bottom: 40px;
+  left: 35px;
+
+  z-index: 5;
+
+  font-family: "Roboto Mono", monospace;
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 400;
+
+  color: #a100ff;
+
+  text-decoration: none;
+
+  opacity: 0.75;
+
+  transition: 0.3s ease;
+}
+
+.back-btn:hover {
+  opacity: 1;
+  transform: translateX(-4px);
+}
+
+/* Figur rechts */
+
+/* Figur rechts */
+
+.figure-wrapper {
+  position: absolute;
+
+  top: 45%;
+  right: 4%;
+
+  transform: translateY(-50%);
+
+  width: clamp(520px, 42vw, 900px);
+  height: clamp(520px, 42vw, 900px);
+
+  z-index: 4;
+
+  pointer-events: none;
+}
+
+.figure-gif {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/*Dass figur gross und dann weg geht*/
+
+.figure-animation {
+  animation: figureWrapper 700ms ease-in-out forwards;
+}
+
+@keyframes figureWrapper {
+
+  0% {
+    transform: translateY(-50%) scale(1);
+    opacity: 1;
+  }
+
+  
+
+  100% {
+    transform: translateY(-50%) scale(3.5);
+    opacity: 0.5;
+  }
+}
+
+
+/*Schrift soll wen bei figureWraper bewegung*/
+.content-disappear {
+  animation: contentDisappear 700ms ease-in-out forwards;
+}
+
+@keyframes contentDisappear {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+}
+
+/*Transation Text*/
+.transition-text {
+  position: absolute;
+
+  top: 45%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 10;
+
+  font-family: "Roboto Mono", monospace;
+  font-size: clamp(30px, 4vw, 70px);
+  font-style: italic;
+  font-weight: 400;
+
+  color: white;
+
+  opacity: 0;
+
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/*Data loadaing*/
+.transition-text-show {
+  animation: transitionTextShow 4200ms ease forwards;
+}
+
+@keyframes transitionTextShow {
+
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  95%{
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+  
+}
+
+/*resultat: process completed*/
+.result-content {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 12;
+
+  text-align: center;
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+.result-content.result-show {
+  pointer-events: auto;
+}
+
+.result-content h2 {
+  font-family: "Roboto Mono", monospace;
+
+  font-size: clamp(30px, 4vw, 70px);
+
+  font-style: italic;
+  font-weight: 400;
+
+  color: white;
+
+  margin-bottom: 45px;
+}
+.results-btn {
+  font-family: "Roboto Mono", monospace;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 45px;
+  height: 80px;
+
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.15);
+
+  background: linear-gradient(135deg, #55106e, #2a003d);
+
+  color: #c020ff;
+  font-size: 24px;
+
+  cursor: pointer;
+
+  box-shadow: 0 0 35px rgba(160, 0, 255, 0.25);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.results-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 55px rgba(180, 0, 255, 0.55);
+}
+
+.result-show {
+  animation: resultShow 1200ms ease forwards;
+}
+
+@keyframes resultShow {
+
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -45%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+.background-disappear {
+  animation: backgroundDisappear 1200ms ease forwards;
+}
+
+@keyframes backgroundDisappear {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+
+/*-----------------*/
+
+/* Mobile */
+
+@media (max-width: 900px) {
+  .gender-content {
+    top: 38%;
+    left: 50%;
+  }
+
+  .button-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .figure-wrapper {
+    width: 280px;
+    height: 280px;
+    right: 50%;
+    top: 78%;
+    transform: translate(50%, -50%);
+    opacity: 0.7;
+  }
+}
+

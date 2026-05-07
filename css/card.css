@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #020104;
+  color: white;
+  font-family: "Roboto Mono", monospace;
+}
+
+.card-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Hintergrund */
+
+.card-background-video {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  z-index: 1;
+}
+
+.dark-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  z-index: 2;
+}
+
+/* Titel */
+
+.card-title {
+  position: absolute;
+  top: 9%;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 5;
+
+  font-size: clamp(36px, 4vw, 64px);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 6px;
+  white-space: nowrap;
+}
+
+/* Karte */
+
+.identity-card {
+  position: absolute;
+  top: 57%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 82vw;
+  height: 72vh;
+
+  z-index: 5;
+
+  border-radius: 55px;
+  border: 1px solid rgba(170, 70, 255, 0.3);
+
+  background:
+    radial-gradient(circle at bottom center, rgba(160, 0, 255, 0.55), transparent 45%),
+    linear-gradient(135deg, rgba(30, 0, 45, 0.85), rgba(55, 0, 75, 0.75));
+
+  box-shadow:
+    0 0 60px rgba(160, 0, 255, 0.25),
+    inset 0 0 80px rgba(180, 0, 255, 0.18);
+
+  overflow: hidden;
+}
+
+/* Daten */
+
+.data-grid {
+  position: relative;
+  z-index: 6;
+
+  display: grid;
+  grid-template-columns: 1.3fr 1.2fr 0.7fr;
+  column-gap: 70px;
+  row-gap: 70px;
+
+  padding: 75px 90px;
+}
+
+.data-block {
+  min-width: 0;
+}
+
+.label {
+  color: #a100ff;
+
+  font-size: clamp(18px, 1.7vw, 28px);
+  font-style: italic;
+  font-weight: 400;
+
+  margin-bottom: 16px;
+}
+
+.value {
+  color: #b020ff;
+
+  font-size: clamp(20px, 2vw, 34px);
+  font-style: normal;
+  font-weight: 400;
+
+  line-height: 1.45;
+}
+
+/* Lottie Platzhalter */
+
+.fingerprint-placeholder {
+  position: absolute;
+
+  right: 13%;
+  bottom: 15%;
+
+  width: 210px;
+  height: 210px;
+
+  z-index: 7;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fingerprint-placeholder lottie-player {
+  width: 100%;
+  height: 100%;
+}
+
+.fake-fingerprint {
+  width: 180px;
+  height: 180px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #a100ff;
+
+  font-size: 150px;
+  line-height: 1;
+
+  text-shadow:
+    0 0 25px rgba(160, 0, 255, 0.8),
+    0 0 55px rgba(160, 0, 255, 0.5);
+}
+
+/* Back Button*/
+
+.back-btn {
+  position: absolute;
+
+  bottom: 40px;
+  left: 35px;
+
+  z-index: 10;
+
+  font-family: "Roboto Mono", monospace;
+  font-size: 22px;
+
+  font-style: italic;
+  font-weight: 400;
+
+  color: #a100ff;
+
+  text-decoration: none;
+
+  opacity: 0.75;
+
+  transition: 0.3s ease;
+}
+
+.back-btn:hover {
+  opacity: 1;
+  transform: translateX(-4px);
+}
+
+/* Mobile */
+
+@media (max-width: 900px) {
+  .card-title {
+    top: 6%;
+    font-size: 32px;
+  }
+
+  .identity-card {
+    width: 90vw;
+    height: 78vh;
+    border-radius: 35px;
+  }
+
+  .data-grid {
+    grid-template-columns: 1fr;
+    row-gap: 28px;
+    padding: 45px 35px;
+  }
+
+  .fingerprint-placeholder {
+    right: 30px;
+    bottom: 30px;
+    width: 130px;
+    height: 130px;
+    opacity: 0.6;
+  }
+
+  .fake-fingerprint {
+    font-size: 90px;
+  }
+}
